@@ -3,9 +3,7 @@ function changeProductName(productIndex, newProductName) {
     const products = document.getElementsByClassName('product');
     if (productIndex >= 0 && productIndex < products.length) {
       const productNameElement = products[productIndex].querySelector('h2');
-      if (productNameElement) {
-        productNameElement.textContent = newProductName;
-      }
+      productNameElement.textContent = newProductName;
     }
   }
   
