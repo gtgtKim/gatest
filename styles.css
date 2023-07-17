@@ -37,6 +37,47 @@
     margin-top: 10px;
     cursor: pointer;
   }
+
+  .product-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .product-image img {
+    width: 300px;
+    height: auto;
+  }
+  
+  .product-info {
+    margin-left: 30px;
+  }
+  
+  .product-info h2 {
+    font-size: 24px;
+  }
+  
+  .product-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .add-to-cart-button,
+  .checkout-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+
   
   header {
     background-color: #333;
