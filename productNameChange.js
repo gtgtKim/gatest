@@ -15,25 +15,26 @@ function changeProductName(productIndex, newProductName) {
   }
 
 
-//슬라이드 변경
-  const sliderContainer = document.querySelector('.slider-container');
-  const sliderSlides = document.querySelectorAll('.slider-slide');
-  
-  let slideIndex = 0;
-  
-  function showSlide(index) {
-    sliderSlides.forEach((slide, i) => {
-      slide.style.transform = `translateX(${100 * (i - index)}%)`;
-    });
+// JavaScript로 슬라이드를 자동으로 전환하는 코드
+const slides = document.getElementsByClassName("slider-slide");
+let currentSlide = 0;
+
+function showSlide(slideIndex) {
+  // 모든 슬라이드의 active 클래스 제거
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
   }
-  
-  function nextSlide() {
-    slideIndex++;
-    if (slideIndex >= sliderSlides.length) {
-      slideIndex = 0;
-    }
-    showSlide(slideIndex);
-  }
-  
-  // 매 3초마다 다음 슬라이드 보여주기
-  setInterval(nextSlide, 3000);
+  // 현재 슬라이드에 active 클래스 추가
+  slides[slideIndex].classList.add("active");
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+// 첫 번째 슬라이드를 보여줌
+showSlide(currentSlide);
+
+// 5초마다 다음 슬라이드를 보여줌
+setInterval(nextSlide, 1500);

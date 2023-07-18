@@ -107,3 +107,24 @@
     text-align: center;
   }
   
+
+/* 슬라이드 컨테이너 스타일 */
+.slider-container {
+  width: 100%;
+  margin: 0 auto; /* 가운데 정렬을 위해 추가. */
+  overflow: hidden;
+  position: relative;
+}
+
+/* 각 슬라이드 스타일 */
+.slider-slide {
+  display: none;
+  padding: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* 현재 보이는 슬라이드 스타일 */
+.slider-slide.active {
+  display: block;
+}
