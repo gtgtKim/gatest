@@ -14,6 +14,21 @@ function changeProductName(productIndex, newProductName) {
     changeProductName(i, newProductName);
   }
 
+// DOM 요소를 가져와서 상품 가격을 변경하는 함수
+function changeProductPrice(productIndex, newProductPrice) {
+  const products = document.getElementsByClassName('product');
+  if (productIndex >= 0 && productIndex < products.length) {
+    const productNameElement = products[productIndex].querySelector('p');
+    productNameElement.textContent = newProductPrice;
+  }
+}
+
+// 모든 상품의 가격을 변경
+for (let i = 0; i < products.length; i++) {
+  const newProductPrice = "$ " + ((i +1)* 101);
+  changeProductPrice(i, newProductPrice);
+}
+
 
 // JavaScript로 슬라이드를 자동으로 전환하는 코드
 const slides = document.getElementsByClassName("slider-slide");
@@ -36,5 +51,12 @@ function nextSlide() {
 // 첫 번째 슬라이드를 보여줌
 showSlide(currentSlide);
 
-// 5초마다 다음 슬라이드를 보여줌
+// 1.5초마다 다음 슬라이드를 보여줌
 setInterval(nextSlide, 1500);
+
+
+
+// 구매 버튼 클릭 함수 호출
+const buyButtons = document.getElementsByClassName("buy-button");
+
+
