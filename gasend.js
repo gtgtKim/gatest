@@ -45,14 +45,21 @@ element.addEventListener("mouseover", function() {
 element.addEventListener("mouseout", function() {
   let hoverEnd = new Date();
   hoverTime = hoverEnd - hoverStart;
-  let mouseout = {
-    "event": "mouseout",
-    "mouseontime": hoverTime
-    }
-
-  dataLayer.push(mouseout);
-  dataLayerReset(mouseout);
-  hoverTime = 0;
-  hoverStart = 0;
-  hoverEnd = 0;
+  if (hoverTime > 1000){
+    let mouseout = {
+      "event": "mouseout",
+      "mouseontime": hoverTime
+      }
+  
+    dataLayer.push(mouseout);
+    dataLayerReset(mouseout);
+    hoverTime = 0;
+    hoverStart = 0;
+    hoverEnd = 0;
+  } else {
+    hoverTime = 0;
+    hoverStart = 0;
+    hoverEnd = 0;
+  }
+  
 });
