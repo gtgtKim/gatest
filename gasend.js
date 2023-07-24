@@ -23,3 +23,33 @@ function gaSend(i) {
 for (let i = 0; i < buyButtons.length; i++) {
     buyButtons[i].addEventListener('click', () => gaSend(i));
     }
+
+
+
+// "product" 클래스를 가진 모든 div 요소를 선택합니다.
+let elements = document.querySelectorAll('div.product');
+
+// 첫 번째 요소가 존재하는 경우에만 id를 설정합니다.
+if (elements.length > 0) {
+  elements[0].id = 'mouseon';
+}
+
+let hoverTime = 0;
+let hoverStart = 0;
+let element = document.getElementById("mouseon");
+
+element.addEventListener("mouseover", function() {
+  hoverStart = new Date();
+});
+
+element.addEventListener("mouseout", function() {
+  let hoverEnd = new Date();
+  hoverTime += hoverEnd - hoverStart;
+  let mouseout = {
+    "event": "mouseout",
+    "mouseontime": hovertime
+    }
+
+  dataLayer.push(mouseout)
+  dataLayerReset(mouseout)
+});
