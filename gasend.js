@@ -47,7 +47,7 @@ element.addEventListener("mouseout", function() {
   hoverTime += hoverEnd - hoverStart;
   let mouseout = {
     "event": "mouseout",
-    "mouseontime": hovertime
+    "mouseontime": hoverTime
     }
 
   dataLayer.push(mouseout)
