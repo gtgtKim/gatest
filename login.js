@@ -16,7 +16,7 @@ function checkCookie(key) {
 
 
 function login() {
-    if (checkCookie("custuserid")){
+    if (!checkCookie("custuserid")){
   let useridvalue = document.getElementById("useridvalue").value
   document.cookie = "cstuserid=" + useridvalue;
   location.reload();
