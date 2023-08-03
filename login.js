@@ -10,33 +10,38 @@ function checkCookie(key) {
   return false; // 해당 키를 가진 쿠키가 없음
   }
 
+function getCookieValue(cookieName) {
+    let cookieArray = document.cookie.split(';'); // 쿠키들을 배열로 변환
 
+    for(let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i].trim();
+        if (cookie.indexOf(cookieName + '=') == 0) { // 해당 이름을 가진 쿠키가 있는지 확인
+            return cookie.substring(cookieName.length + 1); // 쿠키의 값을 반환
+        }
+    }
+    return ""; // 쿠키를 찾지 못했을 때 빈 문자열 반환
+}
 
 function login() {
-    if (!checkCookie("cstuserid")){
-  let useridvalue = document.getElementById("useridvalue").value
-  document.cookie = "cstuserid=" + useridvalue;
-  location.reload();
-} else { alert("이미 로그인되어 있습니다.")
+    if (document.getElementById("loginbtn").innerText = "로그인"){
+      let useridvalue = document.getElementById("useridvalue").value
+      document.cookie = "cstuserid=" + useridvalue;
+      location.reload();
+} else {document.cookie = "cstuserid= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+location.reload()
 }
 }
 
-function logout() {
-    if (checkCookie("cstuserid")){
-    document.cookie = "cstuserid= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-    location.reload()
-} else { alert("이미 로그아웃 되어 있습니다.")
-}}
 
 if (checkCookie("cstuserid")){
-    document.getElementById("loginstatus").innerText = "로그인된 상태"
+  let currentUserId = getCookieValue("cstuserid")
+    document.getElementById("loginbtn").innerText = "로그아웃";
+    document.getElementById("useridvalue").outerHTML=`<div>${currentUserId}</div>`
 } else{
-    document.getElementById("loginstatus").innerText = "비로그인 상태"
+    document.getElementById("loginbtn").innerText = "로그인"
 }
 
 
 let loginbtn = document.getElementById("loginbtn")
 loginbtn.addEventListener("click", login)    
-let logoutbtn = document.getElementById("logoutbtn")
-logoutbtn.addEventListener("click", logout)
 
