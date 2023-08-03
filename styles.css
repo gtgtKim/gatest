@@ -101,6 +101,11 @@
     text-decoration: none;
   }
   
+  .aline-right {
+    float: right
+  }
+
+
   footer {
     background-color: #f2f2f2;
     padding: 20px;

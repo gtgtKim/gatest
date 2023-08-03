@@ -36,7 +36,7 @@ location.reload(true)
 if (checkCookie("cstuserid")){
   let currentUserId = getCookieValue("cstuserid")
     document.getElementById("loginbtn").innerText = "로그아웃";
-    document.getElementById("useridvalue").outerHTML=`<li>user_id: ${currentUserId}</li>`
+    document.getElementById("useridvalue").outerHTML=`<li class="aline-right">user_id: ${currentUserId}</li>`
 }
 
 
