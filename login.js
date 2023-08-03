@@ -28,7 +28,7 @@ function login() {
       document.cookie = "cstuserid=" + useridvalue;
       location.reload();
 } else {document.cookie = "cstuserid= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-location.reload()
+location.reload(true)
 }
 }
 
@@ -36,9 +36,7 @@ location.reload()
 if (checkCookie("cstuserid")){
   let currentUserId = getCookieValue("cstuserid")
     document.getElementById("loginbtn").innerText = "로그아웃";
-    document.getElementById("useridvalue").outerHTML=`<div>${currentUserId}</div>`
-} else{
-    document.getElementById("loginbtn").innerText = "로그인"
+    document.getElementById("useridvalue").outerHTML=`<li>user_id: ${currentUserId}</li>`
 }
 
 
