@@ -16,7 +16,7 @@ function checkCookie(key) {
 
 
 function login() {
-    if (!checkCookie("custuserid")){
+    if (!checkCookie("cstuserid")){
   let useridvalue = document.getElementById("useridvalue").value
   document.cookie = "cstuserid=" + useridvalue;
   location.reload();
@@ -25,13 +25,13 @@ function login() {
 }
 
 function logout() {
-    if (checkCookie("custuserid")){
+    if (checkCookie("cstuserid")){
     document.cookie = "cstuserid= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
     location.reload()
 } else { alert("이미 로그아웃 되어 있습니다.")
 }}
 
-if (checkCookie("custuserid")){
+if (checkCookie("cstuserid")){
     document.getElementById("loginstatus").innerText = "로그인된 상태"
 } else{
     document.getElementById("loginstatus").innerText = "비로그인 상태"
