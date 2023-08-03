@@ -23,7 +23,7 @@ function getCookieValue(cookieName) {
 }
 
 function login() {
-    if (document.getElementById("loginbtn").innerText = "로그인"){
+    if (document.getElementById("loginbtn").innerText == "로그인"){
       let useridvalue = document.getElementById("useridvalue").value
       document.cookie = "cstuserid=" + useridvalue;
       location.reload();
