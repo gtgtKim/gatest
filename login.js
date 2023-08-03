@@ -1,16 +1,13 @@
 function checkCookie(key) {
-    let cookieArray = document.cookie.split(';'); // 쿠키를 배열로 변환
-  
-    for(let i = 0; i < cookieArray.length; i++) {
-      let cookie = cookieArray[i];
-      while (cookie.charAt(0) == ' ') { // 쿠키 앞의 공백 제거
-        cookie = cookie.substring(1);
+  let cookieArray = document.cookie.split(';'); // 쿠키들을 배열로 변환
+
+  for(let i = 0; i < cookieArray.length; i++) {
+      let cookie = cookieArray[i].trim();
+      if (cookie.indexOf(key + '=') == 0) { // 해당 키를 가진 쿠키가 있는지 확인
+          return true;
       }
-      if (cookie.indexOf(key) == 0) { // 해당 키를 가진 쿠키가 있는지 확인
-        return true;
-      }
-    }
-    return false; // 해당 키를 가진 쿠키가 없음
+  }
+  return false; // 해당 키를 가진 쿠키가 없음
   }
 
 
@@ -42,6 +39,4 @@ let loginbtn = document.getElementById("loginbtn")
 loginbtn.addEventListener("click", login)    
 let logoutbtn = document.getElementById("logoutbtn")
 logoutbtn.addEventListener("click", logout)
-
-
 
