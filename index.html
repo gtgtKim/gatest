@@ -38,7 +38,7 @@
   </div>
 
 
-  <h1>상품 리스트</h1>
+  <h1 id="useragent">상품 리스트</h1>
 
   <div class="product-list">
     <div class="product">
@@ -143,5 +143,10 @@
   <script type="text/javascript" src="productNameChange.js"></script>
   <script type="text/javascript" src="gasend.js"></script>
   <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript">
+  var h1change = document.getElementById("useragent");
+  h1change.innerText = "상품리스트" + navigator.userAgent;
+   
+  </script>
 </body>
 </html>
