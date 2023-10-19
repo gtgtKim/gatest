@@ -30,3 +30,4 @@ function dataLayerReset(targetObj) {
 
 
 
+    let isAndroid = navigator.userAgent.indexOf('/AOS_gtkim') > -1;
