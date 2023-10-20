@@ -1,0 +1,29 @@
+  function logEvent(name, params) {
+    if (!name) {
+      return;
+    }
+
+  if (window.AnalyticsWebInterface) {
+    // Call Android interface
+    window.AnalyticsWebInterface.logEvent(name, JSON.stringify(params));
+  } else {
+    // No Android interface found
+    console.log("No Android native APIs found.");
+  }
+  }
+
+ 
+
+  function setUserProperty(name, value) {
+    if (!name || !value) {
+      return;
+    }
+
+  if (window.AnalyticsWebInterface) {
+    // Call Android interface
+    window.AnalyticsWebInterface.setUserProperty(name, value);
+  } else {
+    // No Android interface found
+    console.log("No Android native APIs found.");
+  }
+}
