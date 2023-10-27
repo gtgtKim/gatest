@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form in iFrame</title>
+
+    <script>
+      function submitForm() {
+
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+
+          var message = {
+              type: "formSubmission",
+              data: {
+                  event_name : "폼제출",
+                  name: name,
+                  email: email
+              }
+          };
+
+          // 메시지 전송
+          window.parent.postMessage(message, '*');
+      }
+  </script>
+
+ 
+
+</head>
+<body>
+    <form action="/submit-url" method="post">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="submit" value="제출" onclick="submitForm()">
+    </form>
+</body>
+</html>
