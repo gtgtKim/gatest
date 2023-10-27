@@ -42,6 +42,20 @@
     </div>
   </div>
 
+
+  <iframe src="https://sim-1106.github.io/ifram" width="500" height="300"></iframe>
+  <script>
+    var FORM_MASSAGE = FORM_MASSAGE || {};
+    window.addEventListener("message", function(event) {
+          FORM_MASSAGE = event.data.data;
+          console.log("Received name:", FORM_MASSAGE.event_name);
+          console.log("Received name:", FORM_MASSAGE.name);
+          console.log("Received email:", FORM_MASSAGE.email);
+          dataLayer.push({
+            event : "form_submit"})
+        });
+  </script>
+
   <footer>
     <p>&copy; 2023 상품 리스트. All rights reserved.</p>
   </footer>
