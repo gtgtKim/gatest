@@ -28,7 +28,7 @@ function login() {
       document.cookie = "cstuserid=" + useridvalue;
       location.reload();
 } else {document.cookie = "cstuserid= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-location.reload(true)
+location.reload()
 }
 }
 

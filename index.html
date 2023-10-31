@@ -38,7 +38,7 @@
   </div>
 
 
-  <h1>상품 리스트</h1>
+  <h1 id="useragent">상품 리스트</h1>
 
   <div class="product-list">
     <div class="product" data-gt-product="{&quot;currency&quot;: &quot;KRW&quot;, &quot;item_id&quot;: &quot;first&quot;, &quot;item_name&quot;: &quot;FIRST&quot;, &quot;quantity&quot;: &quot;1&quot;, &quot;price&quot;: &quot;49400&quot;, &quot;item_brand&quot;: &quot;헤라&quot;, &quot;item_category&quot;: &quot;메이크업&quot;, &quot;item_category2&quot;: &quot;페이스&quot;, &quot;item_category3&quot;: &quot;쿠션&quot;, &quot;item_category4&quot;: &quot;undefined&quot;, &quot;item_list_name&quot;: &quot;BEST&quot;}">
@@ -90,5 +90,10 @@
   <script type="text/javascript" src="productNameChange.js"></script>
   <script type="text/javascript" src="gasend.js"></script>
   <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript">
+  var h1change = document.getElementById("useragent");
+  h1change.innerText = "상품리스트" + navigator.userAgent;
+   
+  </script>
 </body>
 </html>
