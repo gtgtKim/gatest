@@ -47,14 +47,19 @@
   <iframe src="iframe_formtest.html" width="500" height="300"></iframe>
   
   <script>
-    var FORM_MASSAGE = FORM_MASSAGE || {};
     window.addEventListener("message", function(event) {
-          FORM_MASSAGE = event.data.data;
-          console.log("Received name:", FORM_MASSAGE.event_name);
-          console.log("Received name:", FORM_MASSAGE.name);
-          console.log("Received email:", FORM_MASSAGE.email);
+
+          console.log(event.data.event);
+          console.log(event.data.params1);
+          console.log(event.data.params2);
+          console.log(event.data.params3);
+
           dataLayer.push({
-            event : "form_submit"})
+            event : event.data.event,
+            dynamic_param1 : event.data.params1,
+            dynamic_param2 : event.data.params2,
+            dynamic_param3 : event.data.params3          
+          })
         });
   </script>
 

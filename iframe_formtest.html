@@ -10,14 +10,12 @@
           var email = document.getElementById("email").value;
 
           var message = {
-              type: "formSubmission",
-              data: {
-                  event_name : "폼제출",
-                  name: name,
-                  email: email
-              }
-          };
-
+              "event":"ffff",
+              "params1":"aaaa",
+              "params2":"bbbb",
+              "params3":"cccc",
+              };
+          
           // 메시지 전송
           window.parent.postMessage(message, '*');
       }
