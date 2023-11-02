@@ -133,3 +133,77 @@
 .slider-slide.active {
   display: block;
 }
+
+
+
+.promo-container {
+  font-family: 'Arial', sans-serif;
+  width: 600px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #ddd;
+  margin: 0 auto; /* 중앙 정렬을 위한 스타일 */
+
+}
+
+.promo-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.promo-content {
+  display: flex;
+  align-items: center;
+}
+
+.promo-text {
+  flex: 70%;
+}
+
+.promo-text h2 {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.promo-text p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.promo-text a {
+  font-size: 12px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.promo-banner {
+  flex: 30%;
+  background-color: #FF7F00;
+  color: #FFF;
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.4;
+  border-radius: 10px;
+}
+
+.promo-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 600px; /* promo-container와 동일한 크기 */
+  margin: 0 auto;
+}
+
+.promo-link:link, .promo-link:visited, .promo-link:hover, .promo-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.promo-link:hover {
+  text-decoration: none; /* 호버시 밑줄 제거 */
+}
