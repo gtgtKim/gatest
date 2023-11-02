@@ -7,13 +7,15 @@
       function submitForm() {
 
           var name = document.getElementById("name").value;
-          var email = document.getElementById("email").value;
+          var age = document.getElementById("age").value;
+          var opinion = document.getElementById("opinion").value;
+
 
           var message = {
-              "event":"ffff",
-              "params1":"aaaa",
-              "params2":"bbbb",
-              "params3":"cccc",
+              "event":"formSubmit",
+              "formName":name,
+              "formAge":age,
+              "formOpinion": opinion,
               };
           
           // 메시지 전송
@@ -21,16 +23,35 @@
       }
   </script>
 
+  <style>
+    form {
+        background-color: #808080;  /* 회색 배경색 설정 */
+        padding: 20px;  /* 폼 내부 여백 추가 */
+    }
+
+    form * { /* 폼 내부의 모든 요소를 대상으로 함 */
+        font-weight: bold; /* 볼드 처리 */
+        font-size: 1.1em; /* 기본 글자 크기보다 20% 더 크게 설정 */
+    }
+</style>
  
 
 </head>
 <body>
-    <form action="/submit-url" method="post">
+    <form>
+        <fieldset>
+
+        <legend>NextLeaning 의견 제출</legend>
+
         <label for="name">이름:</label>
         <input type="text" id="name" name="name"><br><br>
-        <label for="email">이메일:</label>
-        <input type="email" id="email" name="email"><br><br>
+        <label for="email">나이:</label>
+        <input type="text" id="age" name="age"><br><br>
+        <label for="email">의견:</label>
+        <input type="text" id="opinion" name="opinion"><br><br>
         <input type="submit" value="제출" onclick="submitForm()">
+    </fieldset>
+
     </form>
 </body>
 </html>

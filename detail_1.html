@@ -19,10 +19,11 @@
   <header>
     <nav class="gnb">
       <ul>
-        <li><a href="#">홈</a></li>
-        <li><a href="#">상품</a></li>
-        <li><a href="#">고객센터</a></li>
-        <li><a href="#">로그인</a></li>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="detail_1.html">상품</a></li>
+        <li><a href="scroll_depth_test.html">버튼</a></li>
+        <button class="aline-right" id="loginbtn">로그인</button>
+        <input class="aline-right" type="text" id="useridvalue" value="userID를 입력하세요">
       </ul>
     </nav>
   </header>
@@ -31,7 +32,7 @@
 
   <div class="product-detail">
     <div class="product-image">
-      <img src="jinramen.jpg" alt="상품 1">
+      <img src="logo.PNG" alt="상품 1">
     </div>
     <div class="product-info">
       <h2>상품 1</h2>
@@ -41,27 +42,30 @@
       <button class="checkout-button">Checkout</button>
     </div>
   </div>
+  <div><br><br><br><br><br><br></div>
 
 
-  <iframe src="https://sim-1106.github.io/ifram" width="500" height="300"></iframe>
   <iframe src="iframe_formtest.html" width="500" height="300"></iframe>
   
   <script>
     window.addEventListener("message", function(event) {
 
           console.log(event.data.event);
-          console.log(event.data.params1);
-          console.log(event.data.params2);
-          console.log(event.data.params3);
+          console.log(event.data.formName);
+          console.log(event.data.formAge);
+          console.log(event.data.formOpinion);
 
           dataLayer.push({
             event : event.data.event,
-            dynamic_param1 : event.data.params1,
-            dynamic_param2 : event.data.params2,
-            dynamic_param3 : event.data.params3          
+            formName : event.data.formName,
+            formAge : event.data.formAge,
+            formOpinion : event.data.formOpinion          
           })
         });
   </script>
+
+  <div><br><br><br><br><br><br></div>
+  <iframe src="https://sim-1106.github.io/ifram" width="500" height="300"></iframe>
 
   <footer>
     <p>&copy; 2023 상품 리스트. All rights reserved.</p>
