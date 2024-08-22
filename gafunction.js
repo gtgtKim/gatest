@@ -20,6 +20,24 @@ function dataLayerReset(targetObj) {
   dataLayer.push(A);
 }
 
+// Define dataLayer and the gtag function.
+
+function gtag() {
+  dataLayer.push(arguments);
+}
+
+// Set default consent to 'denied' as a placeholder
+// Determine actual values based on your own requirements
+gtag("consent", "default", {
+  ad_storage: "denied",
+  ad_user_data: "denied",
+  ad_personalization: "denied",
+  analytics_storage: "denied",
+  functionality_storage: "denied",
+  personalization_storage: "denied",
+  security_storage: "denied",
+});
+
 //GTM 스니펫 코드
 (function (w, d, s, l, i) {
   w[l] = w[l] || [];
